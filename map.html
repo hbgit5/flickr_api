@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style type="text/css">
+      html, body, #map-canvas { height: 100%; margin: 0; padding: 0;}
+    </style>
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFHryt6VjrmpW1y4FbIvFVL0LM64CwpVc">
+    </script>
+    <script type="text/javascript">
+      function initialize() {
+        var mapOptions = {
+          center: { lat: 32.7150, lng:-117.1625},
+          zoom: 8
+        };
+        var map = new google.maps.Map(document.getElementById('map-canvas'),
+            mapOptions);
+          
+    var myLatlng = new google.maps.LatLng( 32.7150,-117.1625);
+          
+          
+// To add the marker to the map, use the 'map' property
+var marker = new google.maps.Marker({
+    position: myLatlng,
+    icon:"https://farm8.staticflickr.com/7540/16130088986_d6afbe890d_s.jpg",
+    //map: map,
+    title:"Hello World1!"
+});
+var marker2 = new google.maps.Marker({
+    position: new google.maps.LatLng( 32.7150,-117.1325),
+    //map: map,
+    title:"Hello World2!"
+});
+var marker3 = new google.maps.Marker({
+    position: new google.maps.LatLng( 32.7150,-117.1425),
+    //map: map,
+    title:"Hello World3!"
+});
+          
+          marker.setMap(map);
+          marker2.setMap(map);
+          marker3.setMap(map);
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+  </head>
+  <body>
+<div id="map-canvas"></div>
+  </body>
+</html>
